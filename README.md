@@ -29,3 +29,9 @@ export const environment = {
 
 - Run `ng serve` to start the development server.
 
+## Screenshots
+
+<img width="1349" alt="Screenshot 2025-05-11 at 11 14 09 PM" src="https://github.com/user-attachments/assets/e8ed1d00-e42d-4c53-89ad-dfdf0548e280" />
+<img width="1398" alt="Screenshot 2025-05-11 at 11 15 49 PM" src="https://github.com/user-attachments/assets/01c6fd38-f318-4ba2-8b59-69ead0133835" />
+
+
