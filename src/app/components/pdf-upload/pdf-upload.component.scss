@@ -1,0 +1,35 @@
+@use '../../variables.scss' as *;
+
+.drag-and-drop-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 780px;
+    margin: auto 0;
+}
+
+.drop-area {
+    border: 1px dashed $primary-color;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: $box-shadow-primary;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    user-select: none;
+    margin: 4px;
+    width: 70%;
+}
+  
+.drop-area.hover {
+    background-color: #f5f5f5;
+    border-color: #666;
+}
+
+.drop-area * {
+    pointer-events: none;
+}

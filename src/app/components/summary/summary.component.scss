@@ -1,0 +1,12 @@
+@use '../../variables.scss' as *;
+
+.summary-text-container {
+    display: flex;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: $secondary-color-bg;
+    width: 90%;
+    margin-top: 16px;
+    border: 1px solid $primary-color;
+    margin-bottom: 32px;
+}

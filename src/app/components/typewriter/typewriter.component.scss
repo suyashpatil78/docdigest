@@ -1,0 +1,14 @@
+@use '../../variables.scss' as *;
+
+.typewriter {
+  font-size: 20px;
+  text-align: center;
+  margin: 36px;
+  color: $primary-color;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
