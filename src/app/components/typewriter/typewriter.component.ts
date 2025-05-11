@@ -11,7 +11,7 @@ export class TypewriterComponent {
     'Upload your ebooks and research papers and the AI will summarize it for you.',
     'Convert entire PDF into brief, easy-to-read notes for students and researchers.',
     'Summarize your PDF in any language using "state-of-the-art" AI.',
-    'Currently restricted to 10 requests per day!'
+    'Currently restricted to 10 requests per minute!'
   ];
 
   displayText = '';

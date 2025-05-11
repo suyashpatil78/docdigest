@@ -1,5 +1,13 @@
 <h1 class="title">DocDigest</h1>
 <p class="subtitle-1">Get your <span class="pdf-text">PDF</span> summary instantly using AI</p>
 <app-typewriter></app-typewriter>
+@if (errorMessage()) {
+  <div class="error-message-container">
+    <span class="error-message">
+      <img src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-1024.png" alt="error-icon" class="error-icon" width="16px" height="16px">
+      {{ errorMessage() }}
+    </span>
+  </div>
+}
 <app-pdf-upload class="pdf-upload-container" [isLoading]="isLoading()" (pdfFileUploaded)="onPdfFileUploaded($event)"></app-pdf-upload>
 <app-summary class="summary-container" [summary]="summary()"></app-summary>
