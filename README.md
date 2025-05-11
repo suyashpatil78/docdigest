@@ -1,59 +1,34 @@
-# Frontend
+# DocDigest - AI-powered document summarizer
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+## Overview
 
-## Development server
+DocDigest is an AI-powered document summarizer that uses gemini to summarize documents.
 
-To start a local development server, run:
+## Features
 
-```bash
-ng serve
+- Summarize documents using gemini.
+- Extract key points from documents.
+
+## Technologies
+
+- Angular
+
+## Running on local
+
+- Clone the repository.
+- Run `npm install` to install the dependencies.
+- Change the `environment.ts` file to use your own API_URL and MIXPANEL_TOKEN:
+
+```
+export const environment = {
+  production: false,
+  API_URL: '<your-api-url>',
+  MIXPANEL_TOKEN: '<your-mixpanel-token>',
+};
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Run `ng serve` to start the development server.
 
-## Code scaffolding
+## Backend
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The backend for this project is a [Flask](https://github.com/suyashpatil78/docdigest-backend) application.
