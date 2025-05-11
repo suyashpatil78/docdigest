@@ -2,7 +2,7 @@
 
 ## Overview
 
-DocDigest is an AI-powered document summarizer that uses gemini to summarize documents.
+DocDigest is an AI-powered document summarizer that uses gemini to summarize documents. The backend for this project is a [Flask](https://github.com/suyashpatil78/docdigest-backend) application.
 
 ## Features
 
@@ -29,6 +29,3 @@ export const environment = {
 
 - Run `ng serve` to start the development server.
 
-## Backend
-
-The backend for this project is a [Flask](https://github.com/suyashpatil78/docdigest-backend) application.
