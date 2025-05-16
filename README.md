@@ -31,7 +31,9 @@ export const environment = {
 
 ## Screenshots
 
-<img width="1349" alt="Screenshot 2025-05-11 at 11 14 09 PM" src="https://github.com/user-attachments/assets/e8ed1d00-e42d-4c53-89ad-dfdf0548e280" />
-<img width="1398" alt="Screenshot 2025-05-11 at 11 15 49 PM" src="https://github.com/user-attachments/assets/01c6fd38-f318-4ba2-8b59-69ead0133835" />
+<img width="1035" alt="Screenshot 2025-05-17 at 12 06 56 AM" src="https://github.com/user-attachments/assets/8712a939-287e-4d86-9ff3-fea78b89eefd" />
+<img width="1035" alt="Screenshot 2025-05-17 at 12 17 30 AM" src="https://github.com/user-attachments/assets/6552c984-e51d-44e1-966b-685d1d4b10d5" />
+
+
 
 
