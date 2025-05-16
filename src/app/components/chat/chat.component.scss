@@ -1,0 +1,17 @@
+@use '../../variables.scss' as *;
+
+.send-btn {
+    background-color: $primary-color;
+}
+
+.send-btn:hover {
+    background-color: $primary-color-hover;
+}
+
+.ai-text {
+    background-color: $secondary-color-bg;
+}
+
+.question-text {
+    background-color: $primary-color;
+}

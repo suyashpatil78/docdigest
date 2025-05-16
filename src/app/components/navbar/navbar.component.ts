@@ -1,7 +1,4 @@
 import { Component, EventEmitter, inject, Output, signal } from '@angular/core';
-import { environment } from '../../environments/environment';
-import { AuthService } from '../../services/auth.service';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 declare const google: any;
@@ -23,7 +20,17 @@ export class NavbarComponent {
     const file: File = event.target.files[0];
     if (file) {
       this.fileName.set(file.name);
-      this.router.navigate(['/chat'], { state: { file } });
+
+      if (this.router.url === '/chat') {
+
+        this.pdfFileUploaded.emit(file);
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/chat'], { state: { file } });
+        });
+      } else {
+        // Normal navigation if not already on chat page
+        this.router.navigate(['/chat'], { state: { file } });
+      }
     }
   }
 }
