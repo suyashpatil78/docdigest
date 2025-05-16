@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<main class="flex flex-col items-center flex-1 w-full max-w-[88rem] mx-auto px-12 sm:px-16 lg:px-18">
+    <div class=" w-full overflow-x-hidden">
+        <section class="relative gap-8 overflow-hidden py-16 md:py-24 flex flex-col lg:flex-row sm:flex-col md:flex-col justify-between items-center">
+            <p class="w-full sm:w-full md:w-full lg:w-1/2 subtitle-1">Get your <span class="pdf-text">PDF</span> summary instantly using AI</p>
+            <app-pdf-upload class="w-full sm:w-full md:w-full lg:w-1/2 pdf-upload-container" [isLoading]="isLoading()" (pdfFileUploaded)="onPdfFileUploaded($event)"></app-pdf-upload>
+        </section>
+    </div>
+    <div class="content-container"></div>
+        <div class="w-full flex flex-col m-8 p-6 min-h-[300px] max-w-sm rounded-lg shadow-sm [mask-image:linear-gradient(to_bottom,white,transparent)] card-container">
+            <img src="assets/images/chat.png" alt="chat-icon" class="w-8 h-8">
+            <p class="font-medium pt-2 text-[18px]">Chat with your PDF</p>
+            <p class="py-12">Ask questions about your PDF and get instant answers.</p>
+        </div>
+        <div class="w-full flex flex-col m-8 p-6 min-h-[300px] max-w-sm rounded-lg shadow-sm [mask-image:linear-gradient(to_bottom,white,transparent)] card-container">
+            <img src="assets/images/student.png" alt="student-icon" class="w-8 h-8">
+            <p class="font-medium pt-2 text-[18px]">For research work</p>
+            <p class="py-12">Explore scientific papers, academic articles, and books to get the information you need for your research.</p>
+        </div>
+        <div class="w-full flex flex-col m-8 p-6 min-h-[300px] max-w-sm rounded-lg shadow-sm [mask-image:linear-gradient(to_bottom,white,transparent)] card-container">
+            <img src="assets/images/ai.png" alt="ai-icon" class="w-8 h-8">
+            <p class="font-medium pt-2 text-[18px]">Any Language</p>
+            <p class="py-12">DocDigest accepts PDFs in any language and can chat in any language.</p>
+        </div>
+</main>
+@if (errorMessage()) {
+  <div class="error-message-container">
+    <span class="error-message">
+      <img src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-1024.png" alt="error-icon" class="error-icon" width="16px" height="16px">
+      {{ errorMessage() }}
+    </span>
+  </div>
+}

@@ -1,1 +1,20 @@
-
+<header class="sticky top-0 z-50 w-full border-b-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border">
+    <div class="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
+        <a href="/" class="flex items-center gap-2 font-bold">
+            <img src="assets/icons/document.svg" alt="document-icon" class="w-6 h-6">
+            <span class="text-xl title">DocDigest</span>
+        </a>
+        <div class="flex items-center gap-4">
+            <button (click)="fileInput.click()" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow h-8 rounded-md px-3 text-xs cursor-pointer try-it-btn">
+                Try It!
+            </button>
+            <input
+                type="file"
+                #fileInput
+                accept=".pdf"
+                (change)="onFileSelected($event)"
+                hidden
+            />
+        </div>
+    </div>
+</header>

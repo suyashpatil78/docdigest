@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output, signal } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnInit, Output, signal } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pdf-upload',
@@ -15,6 +16,8 @@ export class PdfUploadComponent implements OnInit {
 
   @Output() pdfFileUploaded = new EventEmitter<File>();
 
+  private router = inject(Router);
+
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
     if (file) {
@@ -22,7 +25,7 @@ export class PdfUploadComponent implements OnInit {
       formData.append('file', file);
 
       this.fileName.set(file.name);
-      this.pdfFileUploaded.emit(file);
+      this.router.navigate(['/chat'], { state: { file } });
     }
   }
 
@@ -42,7 +45,7 @@ export class PdfUploadComponent implements OnInit {
     const files = event.dataTransfer?.files;
     if (files && files.length > 0) {
       this.fileName.set(files[0].name);
-      this.pdfFileUploaded.emit(files[0]);
+      this.router.navigate(['/chat'], { state: { file: files[0] } });
     }
   }
 

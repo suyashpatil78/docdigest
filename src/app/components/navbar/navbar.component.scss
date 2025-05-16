@@ -1,11 +1,20 @@
 @use '../../variables.scss' as *;
 
-.contact-us {
-    text-align: end;
-    margin: 24px;
+.border {
+    border-top: 0;
+    border-color: $border-primary;
+}
+
+.try-it-btn {
     background-color: $primary-color;
-    padding: 8px;
-    border-radius: 6px;
-    max-width: fit-content;
+    color: white;
+}
+
+.try-it-btn:hover {
+    background-color: $primary-color-hover;
+}
+
+.sign-in-btn:hover {
+    background-color: $primary-color;
     color: white;
 }

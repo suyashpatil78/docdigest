@@ -1,17 +1,19 @@
 import { Component, inject, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { SummarizerService } from './services/summarizer.service';
-import { catchError, EMPTY, finalize } from 'rxjs';
-import { TrackingService } from './services/tracking.service';
+import { EMPTY } from 'rxjs';
+import { SummarizerService } from '../../services/summarizer.service';
+import { TrackingService } from '../../services/tracking.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { catchError, finalize } from 'rxjs';
+import { PdfUploadComponent } from '../pdf-upload/pdf-upload.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  selector: 'app-home',
+  imports: [PdfUploadComponent, NavbarComponent],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
-export class AppComponent {
+export class HomeComponent {
   title = 'frontend';
 
   summary = signal<string>('');
@@ -47,10 +49,5 @@ export class AppComponent {
           this.trackingService.trackEvent('Summary Generated');
         }
       );
-  }
-
-  ngOnInit() {
-    this.trackingService.init();
-    this.trackingService.trackEvent('Page Visited');
   }
 }
