@@ -10,8 +10,16 @@
 
 .ai-text {
     background-color: $secondary-color-bg;
+    border: 1px solid $primary-color;
 }
 
 .question-text {
     background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.ng2-pdf-viewer-container {
+    &.page {
+        box-shadow: $box-shadow-primary;
+    }
 }

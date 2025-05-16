@@ -2,8 +2,14 @@
 <main class="flex flex-col items-center flex-1 w-full max-w-[88rem] mx-auto px-12 sm:px-16 lg:px-18">
     <div class=" w-full overflow-x-hidden">
         <section class="relative gap-8 overflow-hidden py-16 md:py-24 flex flex-col lg:flex-row sm:flex-col md:flex-col justify-between items-center">
-            <p class="w-full sm:w-full md:w-full lg:w-1/2 subtitle-1">Get your <span class="pdf-text">PDF</span> summary instantly using AI</p>
-            <app-pdf-upload class="w-full sm:w-full md:w-full lg:w-1/2 pdf-upload-container" [isLoading]="isLoading()" (pdfFileUploaded)="onPdfFileUploaded($event)"></app-pdf-upload>
+            <div class="w-full sm:w-full md:w-full lg:w-1/2 subtitle-1">
+                <p>Get your <span class="pdf-text">PDF</span> summary instantly using AI</p>
+                <button (click)="fileInput.click()" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow h-8 rounded-md px-4 text-sm cursor-pointer border border-gray-300 hover:border-gray-400">
+                    Upload PDF
+                </button>
+                <input type="file" #fileInput (change)="onFileSelected($event)" accept=".pdf" hidden>
+            </div>
+            <img src="assets/images/chat_demo.png" alt="chat-demo" class="w-full sm:w-full md:w-full lg:w-1/2 [mask-image:linear-gradient(to_bottom,white,transparent)]">
         </section>
     </div>
     <div class="content-container"></div>

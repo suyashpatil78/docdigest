@@ -4,16 +4,20 @@
         <pdf-viewer [src]="pdfSrc()!"
             [render-text]="true"
             [original-size]="false"
-            class="flex-1 h-[90vh] shadow-lg bg-white"
+            class="flex-1 h-[90vh]"
         ></pdf-viewer>
         <div class="flex flex-col flex-1">
-            <div class="flex-1 overflow-y-auto p-4">
-                <div class="flex flex-col space-y-2 chat-scroll-container">
+            <div class="flex-1 overflow-y-auto p-4 chat-scroll-container">
+                <div class="flex flex-col space-y-2">
                     @if (summary()) {
                         <div class="flex">
                             <div class="ai-text text-black p-2 rounded-lg max-w-md chat-text-container">
                                 <app-summary [summary]="summary()"></app-summary>
                             </div>
+                        </div>
+                    } @else {
+                        <div>
+                            <app-shimmers></app-shimmers>
                         </div>
                     }
                     @for (chat of chats(); track $index) {
@@ -30,6 +34,11 @@
                                 </div>
                             </div>
                         }
+                    }
+                    @if (chats().length > 0 && isLoading()) {
+                        <div>
+                            <app-shimmers></app-shimmers>
+                        </div>
                     }
                 </div>
             </div>

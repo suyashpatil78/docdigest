@@ -29,20 +29,20 @@ export class SummaryComponent {
 
     this.timeout = setTimeout(() => {
       this.typeLoop();
-    }, 5);
+    }, 0);
 
     // Clear this timeout once the summary is fully typed
     if (this.charIndex === fullLength) {
       clearTimeout(this.timeout);
+      this.scrollToBottom();
     }
+  }
 
-    // Scroll to the bottom of the summary
-    const summaryElement = document.querySelector('.summary-text-container');
-    if (summaryElement) {
-      window.scrollTo({
-        top: summaryElement.scrollHeight,
-        behavior: 'smooth'
-      });
+  scrollToBottom() {
+    const summaryElements = document.querySelectorAll('.summary-text-container');
+    const lastElement = summaryElements[summaryElements.length - 1];
+    if (lastElement) {
+      lastElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
   }
 

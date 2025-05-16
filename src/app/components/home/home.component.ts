@@ -1,15 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
-import { EMPTY } from 'rxjs';
-import { SummarizerService } from '../../services/summarizer.service';
-import { TrackingService } from '../../services/tracking.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { catchError, finalize } from 'rxjs';
-import { PdfUploadComponent } from '../pdf-upload/pdf-upload.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [PdfUploadComponent, NavbarComponent],
+  imports: [NavbarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -22,9 +18,7 @@ export class HomeComponent {
 
   errorMessage = signal<string>('');
 
-  private summarizerService = inject(SummarizerService);
-
-  private trackingService = inject(TrackingService);
+  private router = inject(Router);
 
   handleError(err: HttpErrorResponse) {
     if (err.status === 429) {
@@ -34,20 +28,10 @@ export class HomeComponent {
     }
   }
 
-  onPdfFileUploaded(pdfFile: File) {
-    this.isLoading.set(true);
-    this.trackingService.trackEvent('PDF Uploaded');
-    this.summarizerService.summarizePdf(pdfFile)
-      .pipe(
-        finalize(() => this.isLoading.set(false)),
-        catchError((err) => {
-          this.handleError(err);
-          return EMPTY;
-        })
-      ).subscribe(res => {
-          this.summary.set(res.summary);
-          this.trackingService.trackEvent('Summary Generated');
-        }
-      );
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      this.router.navigate(['/chat'], { state: { file } });
+    }
   }
 }
